@@ -10,10 +10,46 @@ import UIKit
 
 class MainTabController: UITabBarController {
 
+    // MARK: - Properties
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemPink
+        configureViewControllers()
+    }
+    
+    // MARK: - Helpers
+    
+    func configureViewControllers() {
+        
+        let feed = FeedController()
+        let feedNav = templateNavigationController(image: UIImage(named: "home_unselected"),
+                                                   rootViewController: feed)
+        
+        let explore = ExploreController()
+        let exploreNav = templateNavigationController(image: UIImage(named: "search_unselected"),
+                                                      rootViewController: explore)
+        
+        let notifications = NotificationsController()
+        let notificationsNav = templateNavigationController(image: UIImage(named: "like_unselected"),
+                                                            rootViewController: notifications)
+        
+        let conversations = ConversationsController()
+        let conversationsNav = templateNavigationController(image: UIImage(named: "like_unselected"),
+                                                            rootViewController: conversations)
+        
+        viewControllers = [feedNav, exploreNav, notificationsNav, conversationsNav]
+    }
+    
+    func templateNavigationController(image: UIImage?, rootViewController: UIViewController) -> UINavigationController {
+        
+        let nav = UINavigationController(rootViewController: rootViewController)
+        nav.tabBarItem.image = image
+        nav.navigationBar.barTintColor = .white
+        
+        return nav
     }
 
 }
