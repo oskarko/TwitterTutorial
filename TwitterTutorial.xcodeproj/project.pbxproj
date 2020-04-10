@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2059AD224410C6800795368 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2059AD124410C6800795368 /* Utilities.swift */; };
 		E2079EC624409E6500C4CC7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2079EC524409E6500C4CC7D /* AppDelegate.swift */; };
 		E2079EC824409E6500C4CC7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2079EC724409E6500C4CC7D /* SceneDelegate.swift */; };
 		E2079ECD24409E6500C4CC7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2079ECB24409E6500C4CC7D /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E2059AD124410C6800795368 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		E2079EC224409E6500C4CC7D /* TwitterTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2079EC524409E6500C4CC7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2079EC724409E6500C4CC7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				E2079EF72440B03900C4CC7D /* Extensions.swift */,
+				E2059AD124410C6800795368 /* Utilities.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			files = (
 				E2079EF42440A3DE00C4CC7D /* NotificationsController.swift in Sources */,
 				E2079EF62440A3ED00C4CC7D /* ConversationsController.swift in Sources */,
+				E2059AD224410C6800795368 /* Utilities.swift in Sources */,
 				E2079EC624409E6500C4CC7D /* AppDelegate.swift in Sources */,
 				E2079EF82440B03900C4CC7D /* Extensions.swift in Sources */,
 				E2079EFC2440B51A00C4CC7D /* LoginController.swift in Sources */,
