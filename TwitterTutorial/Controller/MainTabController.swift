@@ -37,7 +37,7 @@ class MainTabController: UITabBarController {
                                                             rootViewController: notifications)
         
         let conversations = ConversationsController()
-        let conversationsNav = templateNavigationController(image: UIImage(named: "like_unselected"),
+        let conversationsNav = templateNavigationController(image: UIImage(named: "ic_mail_outline_white_2x-1"),
                                                             rootViewController: conversations)
         
         viewControllers = [feedNav, exploreNav, notificationsNav, conversationsNav]
