@@ -28,6 +28,7 @@
 		E26D35992442619900F5CCF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E26D35982442619900F5CCF3 /* GoogleService-Info.plist */; };
 		E26D359B244263B100F5CCF3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D359A244263B100F5CCF3 /* AuthService.swift */; };
 		E26D359D244273E700F5CCF3 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D359C244273E700F5CCF3 /* UserService.swift */; };
+		E26D359F2442771D00F5CCF3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D359E2442771D00F5CCF3 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		E26D35982442619900F5CCF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E26D359A244263B100F5CCF3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E26D359C244273E700F5CCF3 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		E26D359E2442771D00F5CCF3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E75CA1FD5B5A99E2F454D87E /* Pods_TwitterTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BA315393A9D52D47745F6C /* Pods-TwitterTutorialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterTutorialTests.debug.xcconfig"; path = "Target Support Files/Pods-TwitterTutorialTests/Pods-TwitterTutorialTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +212,7 @@
 		E2079EEC24409F0D00C4CC7D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E26D359E2442771D00F5CCF3 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				E2079EF82440B03900C4CC7D /* Extensions.swift in Sources */,
 				E2079EFC2440B51A00C4CC7D /* LoginController.swift in Sources */,
 				E26D359B244263B100F5CCF3 /* AuthService.swift in Sources */,
+				E26D359F2442771D00F5CCF3 /* User.swift in Sources */,
 				E2079EF22440A3CF00C4CC7D /* ExploreController.swift in Sources */,
 				E2079EC824409E6500C4CC7D /* SceneDelegate.swift in Sources */,
 				E2079EEE2440A00C00C4CC7D /* MainTabController.swift in Sources */,
