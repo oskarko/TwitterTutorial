@@ -66,7 +66,6 @@ class RegistrationController: UIViewController {
     
     private let usernameTextField: UITextField = {
         let textField = Utilities().textField(withPlaceholder: "Username")
-        textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -78,7 +77,7 @@ class RegistrationController: UIViewController {
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
         return button
     }()
     
@@ -101,35 +100,25 @@ class RegistrationController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
-    @objc func handleSignUp() {
+    @objc func handleRegistration() {
+        guard let profileImage = profileImage else { return }
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         guard let fullname = fullnameTextField.text else { return }
         guard let username = usernameTextField.text else { return }
-        guard let imageData = profileImage?.jpegData(compressionQuality: 0.3) else { return }
-        let filename = NSUUID().uuidString
-        let storageRef = STORAGE_PROFILE_IMAGES.child(filename)
         
-        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-            if let error = error {
-                print("Error on Sign Up! Error is \(error.localizedDescription)")
-                return
-            }
+        let credentials = AuthCredentials(email: email,
+                                          password: password,
+                                          fullname: fullname,
+                                          username: username,
+                                          profileImage: profileImage)
+        AuthService.shared.registerUser(credentials: credentials) { (error, red) in
+            guard let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else { return }
+            guard let tab = window.rootViewController as? MainTabController else { return }
             
-            guard let uid = result?.user.uid else { return }
+            tab.authenticateUserAndConfigureUI()
             
-            storageRef.putData(imageData, metadata: nil) { (meta, error) in
-                storageRef.downloadURL { (url, error) in
-                    guard let profileImageUrl = url?.absoluteString else { return }
-                    
-                    let values = ["email": email, "username": username, "fullname": fullname, "profileImageUrl": profileImageUrl]
-                    
-                    REF_USERS.child(uid).updateChildValues(values) { (error, reference) in
-                        print("Successfully created and updated user in Firebase!")
-                    }
-                }
-            }
-            
+            self.dismiss(animated: true, completion: nil)
         }
         
     }
