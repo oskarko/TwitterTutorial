@@ -34,6 +34,7 @@
 		E2BCBF6A244455BA006C3CA9 /* TweetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BCBF69244455BA006C3CA9 /* TweetService.swift */; };
 		E2BCBF6C24446602006C3CA9 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BCBF6B24446602006C3CA9 /* Tweet.swift */; };
 		E2BCBF6E24446BCA006C3CA9 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BCBF6D24446BCA006C3CA9 /* TweetCell.swift */; };
+		E2BCBF702444986B006C3CA9 /* TweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BCBF6F2444986B006C3CA9 /* TweetViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		E2BCBF69244455BA006C3CA9 /* TweetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetService.swift; sourceTree = "<group>"; };
 		E2BCBF6B24446602006C3CA9 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		E2BCBF6D24446BCA006C3CA9 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		E2BCBF6F2444986B006C3CA9 /* TweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewModel.swift; sourceTree = "<group>"; };
 		E75CA1FD5B5A99E2F454D87E /* Pods_TwitterTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BA315393A9D52D47745F6C /* Pods-TwitterTutorialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterTutorialTests.debug.xcconfig"; path = "Target Support Files/Pods-TwitterTutorialTests/Pods-TwitterTutorialTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +212,7 @@
 		E2079EEA24409F0800C4CC7D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E2BCBF6F2444986B006C3CA9 /* TweetViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				E2079EF22440A3CF00C4CC7D /* ExploreController.swift in Sources */,
 				E2079EC824409E6500C4CC7D /* SceneDelegate.swift in Sources */,
 				E2079EEE2440A00C00C4CC7D /* MainTabController.swift in Sources */,
+				E2BCBF702444986B006C3CA9 /* TweetViewModel.swift in Sources */,
 				E2079EFE2440B52700C4CC7D /* RegistrationController.swift in Sources */,
 				E2079EF02440A3BF00C4CC7D /* FeedController.swift in Sources */,
 				E26D359724425AF900F5CCF3 /* Constants.swift in Sources */,
