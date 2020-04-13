@@ -12,11 +12,14 @@ class ProfileFilterCell: UICollectionViewCell {
     
     // MARK: - Properties
     
+    var option: ProfileFilterOptions! {
+        didSet { titleLabel.text = option.description }
+    }
+    
     let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .lightGray
         label.font = UIFont.systemFont(ofSize: 14)
-        label.text = "Test filter"
         return label
     }()
     
