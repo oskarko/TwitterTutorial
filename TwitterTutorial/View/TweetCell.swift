@@ -12,6 +12,10 @@ class TweetCell: UICollectionViewCell {
     
     // MARK: - Properties
     
+    var tweet: Tweet? {
+        didSet { configure() }
+    }
+    
     private let profileImageView: UIImageView = {
        let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -26,7 +30,6 @@ class TweetCell: UICollectionViewCell {
        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.numberOfLines = 0
-        label.text = "some tweet text"
         return label
     }()
     
@@ -89,7 +92,6 @@ class TweetCell: UICollectionViewCell {
         stack.anchor(top: profileImageView.topAnchor, left:  profileImageView.rightAnchor, right: rightAnchor, paddingLeft: 12, paddingRight: 12)
         
         infoLabel.font = UIFont.systemFont(ofSize: 14)
-        infoLabel.text = "Steve Rogers"
         
         let actionStack = UIStackView(arrangedSubviews: [commentButton, retweetButton, likeButton, shareButton])
         actionStack.axis = .horizontal
@@ -128,4 +130,12 @@ class TweetCell: UICollectionViewCell {
     }
     
     // MARK: - Helpers
+    
+    func configure() {
+        guard let tweet = tweet else { return }
+        
+        captionLabel.text = tweet.caption
+        profileImageView.sd_setImage(with: tweet.user.profileImageUrl, completed: nil)
+        infoLabel.text = tweet.user.username
+    }
 }
