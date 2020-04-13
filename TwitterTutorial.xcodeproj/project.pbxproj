@@ -30,6 +30,9 @@
 		E26D359D244273E700F5CCF3 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D359C244273E700F5CCF3 /* UserService.swift */; };
 		E26D359F2442771D00F5CCF3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D359E2442771D00F5CCF3 /* User.swift */; };
 		E2BCBF662444498C006C3CA9 /* UploadTweetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BCBF652444498C006C3CA9 /* UploadTweetController.swift */; };
+		E2BCBF6824445166006C3CA9 /* CaptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BCBF6724445166006C3CA9 /* CaptionTextView.swift */; };
+		E2BCBF6A244455BA006C3CA9 /* TweetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BCBF69244455BA006C3CA9 /* TweetService.swift */; };
+		E2BCBF6C24446602006C3CA9 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BCBF6B24446602006C3CA9 /* Tweet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		E26D359C244273E700F5CCF3 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		E26D359E2442771D00F5CCF3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E2BCBF652444498C006C3CA9 /* UploadTweetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTweetController.swift; sourceTree = "<group>"; };
+		E2BCBF6724445166006C3CA9 /* CaptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionTextView.swift; sourceTree = "<group>"; };
+		E2BCBF69244455BA006C3CA9 /* TweetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetService.swift; sourceTree = "<group>"; };
+		E2BCBF6B24446602006C3CA9 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		E75CA1FD5B5A99E2F454D87E /* Pods_TwitterTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BA315393A9D52D47745F6C /* Pods-TwitterTutorialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterTutorialTests.debug.xcconfig"; path = "Target Support Files/Pods-TwitterTutorialTests/Pods-TwitterTutorialTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +186,7 @@
 			children = (
 				E26D359A244263B100F5CCF3 /* AuthService.swift */,
 				E26D359C244273E700F5CCF3 /* UserService.swift */,
+				E2BCBF69244455BA006C3CA9 /* TweetService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -208,6 +215,7 @@
 		E2079EEB24409F0B00C4CC7D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E2BCBF6724445166006C3CA9 /* CaptionTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				E26D359E2442771D00F5CCF3 /* User.swift */,
+				E2BCBF6B24446602006C3CA9 /* Tweet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -400,6 +409,7 @@
 			files = (
 				E26D359D244273E700F5CCF3 /* UserService.swift in Sources */,
 				E2079EF42440A3DE00C4CC7D /* NotificationsController.swift in Sources */,
+				E2BCBF6824445166006C3CA9 /* CaptionTextView.swift in Sources */,
 				E2079EF62440A3ED00C4CC7D /* ConversationsController.swift in Sources */,
 				E2059AD224410C6800795368 /* Utilities.swift in Sources */,
 				E2079EC624409E6500C4CC7D /* AppDelegate.swift in Sources */,
@@ -414,6 +424,8 @@
 				E2079EFE2440B52700C4CC7D /* RegistrationController.swift in Sources */,
 				E2079EF02440A3BF00C4CC7D /* FeedController.swift in Sources */,
 				E26D359724425AF900F5CCF3 /* Constants.swift in Sources */,
+				E2BCBF6C24446602006C3CA9 /* Tweet.swift in Sources */,
+				E2BCBF6A244455BA006C3CA9 /* TweetService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
