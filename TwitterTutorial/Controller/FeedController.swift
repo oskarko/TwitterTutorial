@@ -98,8 +98,10 @@ extension FeedController: UICollectionViewDelegateFlowLayout {
 // MARK: - TweetCellDelegate
 
 extension FeedController: TweetCellDelegate {
-    func handleProfileIMageTapped() {
-        let controller = ProfileController(collectionViewLayout: UICollectionViewFlowLayout())
+    func handleProfileIMageTapped(_ cell: TweetCell) {
+        guard let user = cell.tweet?.user else { return }
+        
+        let controller = ProfileController(user: user)
         navigationController?.pushViewController(controller, animated: true)
     }
 }
