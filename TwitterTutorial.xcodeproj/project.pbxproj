@@ -24,6 +24,7 @@
 		E2079EF82440B03900C4CC7D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2079EF72440B03900C4CC7D /* Extensions.swift */; };
 		E2079EFC2440B51A00C4CC7D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2079EFB2440B51A00C4CC7D /* LoginController.swift */; };
 		E2079EFE2440B52700C4CC7D /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2079EFD2440B52700C4CC7D /* RegistrationController.swift */; };
+		E240EB372445F2F400BC0AC3 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E240EB362445F2F400BC0AC3 /* UserCell.swift */; };
 		E24EAF452445075300226159 /* ProfileFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EAF442445075300226159 /* ProfileFilterView.swift */; };
 		E24EAF472445091E00226159 /* ProfileFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EAF462445091E00226159 /* ProfileFilterCell.swift */; };
 		E24EAF492445143400226159 /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EAF482445143400226159 /* ProfileHeaderViewModel.swift */; };
@@ -76,6 +77,7 @@
 		E2079EF72440B03900C4CC7D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E2079EFB2440B51A00C4CC7D /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		E2079EFD2440B52700C4CC7D /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		E240EB362445F2F400BC0AC3 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		E24EAF442445075300226159 /* ProfileFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterView.swift; sourceTree = "<group>"; };
 		E24EAF462445091E00226159 /* ProfileFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterCell.swift; sourceTree = "<group>"; };
 		E24EAF482445143400226159 /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				E2BCBF732444A5CD006C3CA9 /* ProfileHeader.swift */,
 				E24EAF442445075300226159 /* ProfileFilterView.swift */,
 				E24EAF462445091E00226159 /* ProfileFilterCell.swift */,
+				E240EB362445F2F400BC0AC3 /* UserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				E2BCBF6824445166006C3CA9 /* CaptionTextView.swift in Sources */,
 				E24EAF472445091E00226159 /* ProfileFilterCell.swift in Sources */,
 				E2079EF62440A3ED00C4CC7D /* ConversationsController.swift in Sources */,
+				E240EB372445F2F400BC0AC3 /* UserCell.swift in Sources */,
 				E2059AD224410C6800795368 /* Utilities.swift in Sources */,
 				E2079EC624409E6500C4CC7D /* AppDelegate.swift in Sources */,
 				E2079EF82440B03900C4CC7D /* Extensions.swift in Sources */,
