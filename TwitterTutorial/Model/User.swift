@@ -16,6 +16,7 @@ struct User {
     var profileImageUrl: URL?
     let uid: String
     var isFollowed = false
+    var stats: UserRelationStats?
     
     var isCurrentUser: Bool { return Auth.auth().currentUser?.uid == uid }
     
@@ -30,4 +31,9 @@ struct User {
             self.profileImageUrl = url
         }
     }
+}
+
+struct UserRelationStats {
+    var followers: Int
+    var following: Int
 }
