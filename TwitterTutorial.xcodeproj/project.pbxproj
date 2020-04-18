@@ -33,6 +33,7 @@
 		E24EAF472445091E00226159 /* ProfileFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EAF462445091E00226159 /* ProfileFilterCell.swift */; };
 		E24EAF492445143400226159 /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EAF482445143400226159 /* ProfileHeaderViewModel.swift */; };
 		E25BED97244B95B000AB85B1 /* ActionSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BED96244B95B000AB85B1 /* ActionSheetCell.swift */; };
+		E25BED99244B9A5600AB85B1 /* ActionSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BED98244B9A5600AB85B1 /* ActionSheetViewModel.swift */; };
 		E26D359724425AF900F5CCF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D359624425AF900F5CCF3 /* Constants.swift */; };
 		E26D35992442619900F5CCF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E26D35982442619900F5CCF3 /* GoogleService-Info.plist */; };
 		E26D359B244263B100F5CCF3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D359A244263B100F5CCF3 /* AuthService.swift */; };
@@ -91,6 +92,7 @@
 		E24EAF462445091E00226159 /* ProfileFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterCell.swift; sourceTree = "<group>"; };
 		E24EAF482445143400226159 /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		E25BED96244B95B000AB85B1 /* ActionSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetCell.swift; sourceTree = "<group>"; };
+		E25BED98244B9A5600AB85B1 /* ActionSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewModel.swift; sourceTree = "<group>"; };
 		E26D359624425AF900F5CCF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E26D35982442619900F5CCF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E26D359A244263B100F5CCF3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				E2BCBF6F2444986B006C3CA9 /* TweetViewModel.swift */,
 				E24EAF482445143400226159 /* ProfileHeaderViewModel.swift */,
 				E236CF082448EB1900F7C5D7 /* UploadTweetViewModel.swift */,
+				E25BED98244B9A5600AB85B1 /* ActionSheetViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				E2BCBF702444986B006C3CA9 /* TweetViewModel.swift in Sources */,
 				E22A14612448438A000A7779 /* TweetHeader.swift in Sources */,
 				E2079EFE2440B52700C4CC7D /* RegistrationController.swift in Sources */,
+				E25BED99244B9A5600AB85B1 /* ActionSheetViewModel.swift in Sources */,
 				E2079EF02440A3BF00C4CC7D /* FeedController.swift in Sources */,
 				E24EAF452445075300226159 /* ProfileFilterView.swift in Sources */,
 				E26D359724425AF900F5CCF3 /* Constants.swift in Sources */,
