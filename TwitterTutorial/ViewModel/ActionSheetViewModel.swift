@@ -12,7 +12,7 @@ struct ActionSheetViewModel {
     
     private let user: User
     
-    var option: [ActionSheetOptions] {
+    var options: [ActionSheetOptions] {
         var results = [ActionSheetOptions]()
         
         if user.isCurrentUser {
