@@ -34,6 +34,7 @@
 		E24EAF492445143400226159 /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EAF482445143400226159 /* ProfileHeaderViewModel.swift */; };
 		E25BED97244B95B000AB85B1 /* ActionSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BED96244B95B000AB85B1 /* ActionSheetCell.swift */; };
 		E25BED99244B9A5600AB85B1 /* ActionSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BED98244B9A5600AB85B1 /* ActionSheetViewModel.swift */; };
+		E25DF2F1254307EE0045BCC0 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DF2F0254307EE0045BCC0 /* Notification.swift */; };
 		E26D359724425AF900F5CCF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D359624425AF900F5CCF3 /* Constants.swift */; };
 		E26D35992442619900F5CCF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E26D35982442619900F5CCF3 /* GoogleService-Info.plist */; };
 		E26D359B244263B100F5CCF3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D359A244263B100F5CCF3 /* AuthService.swift */; };
@@ -93,6 +94,7 @@
 		E24EAF482445143400226159 /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		E25BED96244B95B000AB85B1 /* ActionSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetCell.swift; sourceTree = "<group>"; };
 		E25BED98244B9A5600AB85B1 /* ActionSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewModel.swift; sourceTree = "<group>"; };
+		E25DF2F0254307EE0045BCC0 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		E26D359624425AF900F5CCF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E26D35982442619900F5CCF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E26D359A244263B100F5CCF3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				E26D359E2442771D00F5CCF3 /* User.swift */,
 				E2BCBF6B24446602006C3CA9 /* Tweet.swift */,
+				E25DF2F0254307EE0045BCC0 /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				E2BCBF742444A5CD006C3CA9 /* ProfileHeader.swift in Sources */,
 				E2BCBF6E24446BCA006C3CA9 /* TweetCell.swift in Sources */,
 				E2079EFC2440B51A00C4CC7D /* LoginController.swift in Sources */,
+				E25DF2F1254307EE0045BCC0 /* Notification.swift in Sources */,
 				E26D359B244263B100F5CCF3 /* AuthService.swift in Sources */,
 				E2BCBF662444498C006C3CA9 /* UploadTweetController.swift in Sources */,
 				E26D359F2442771D00F5CCF3 /* User.swift in Sources */,
