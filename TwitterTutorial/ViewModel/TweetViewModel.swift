@@ -46,6 +46,15 @@ struct TweetViewModel {
         
         return title
     }
+
+    var likeButtonTintColor: UIColor {
+        return tweet.didLike ? .red : .lightGray
+    }
+
+    var likeButtonImage: UIImage {
+        let imageName = tweet.didLike ? "like_filled" : "like"
+        return UIImage(named: imageName)! // we know these images exist
+    }
     
     var timestamp: String {
         let formatter = DateComponentsFormatter()
