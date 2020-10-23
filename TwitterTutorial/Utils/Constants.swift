@@ -22,3 +22,6 @@ let REF_TWEET_REPLIES = DB_REF.child("tweet-replies")
 // likes
 let REF_USER_LIKES = DB_REF.child("user-likes")
 let REF_TWEET_LIKES = DB_REF.child("tweet-likes")
+
+// notifications
+let REF_NOTIFICATIONS = DB_REF.child("notifications")
