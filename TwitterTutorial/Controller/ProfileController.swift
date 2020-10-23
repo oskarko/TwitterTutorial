@@ -134,6 +134,9 @@ extension ProfileController: ProfileHeaderDelegate {
             UserService.shared.followUser(uid: user.uid) { (database, error) in
                 self.user.isFollowed = true
                 self.collectionView.reloadData()
+
+                // We must send a notification in case we start following someone.
+                NotificationService.shared.uploadNotification(type: .follow, user: self.user)
             }
         }
     }

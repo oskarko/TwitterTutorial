@@ -83,6 +83,11 @@ class UploadTweetController: UIViewController {
                 print("Error sending tweet. \(error.localizedDescription)")
                  return
             }
+
+            // We'll send a notification if we're replying to another tweet.
+            if case .reply(let tweet) = self.config {
+                NotificationService.shared.uploadNotification(type: .reply, tweet: tweet)
+            }
             
             self.dismiss(animated: true, completion: nil)
         }
