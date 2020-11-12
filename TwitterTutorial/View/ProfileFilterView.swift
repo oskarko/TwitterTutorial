@@ -11,7 +11,7 @@ import UIKit
 private let reuseIdentifier = "ProfileFilterCell"
 
 protocol ProfileFilterViewDelegate: class {
-    func filterView(_ view: ProfileFilterView, didSelect indexPath: IndexPath)
+    func filterView(_ view: ProfileFilterView, didSelect indexPath: Int)
 }
 
 class ProfileFilterView: UIView {
@@ -107,6 +107,6 @@ extension ProfileFilterView: UICollectionViewDelegate {
         }
 
         // delegating the action...
-        delegate?.filterView(self, didSelect: indexPath)
+        delegate?.filterView(self, didSelect: indexPath.row)
     }
 }
