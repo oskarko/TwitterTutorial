@@ -50,6 +50,7 @@
 		E2BCBF702444986B006C3CA9 /* TweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BCBF6F2444986B006C3CA9 /* TweetViewModel.swift */; };
 		E2BCBF722444A029006C3CA9 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BCBF712444A029006C3CA9 /* ProfileController.swift */; };
 		E2BCBF742444A5CD006C3CA9 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BCBF732444A5CD006C3CA9 /* ProfileHeader.swift */; };
+		E2D569F7255D114300220237 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D569F6255D114300220237 /* NotificationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		E2BCBF6F2444986B006C3CA9 /* TweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewModel.swift; sourceTree = "<group>"; };
 		E2BCBF712444A029006C3CA9 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		E2BCBF732444A5CD006C3CA9 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		E2D569F6255D114300220237 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		E75CA1FD5B5A99E2F454D87E /* Pods_TwitterTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BA315393A9D52D47745F6C /* Pods-TwitterTutorialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterTutorialTests.debug.xcconfig"; path = "Target Support Files/Pods-TwitterTutorialTests/Pods-TwitterTutorialTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,6 +252,7 @@
 				E24EAF482445143400226159 /* ProfileHeaderViewModel.swift */,
 				E236CF082448EB1900F7C5D7 /* UploadTweetViewModel.swift */,
 				E25BED98244B9A5600AB85B1 /* ActionSheetViewModel.swift */,
+				E2D569F6255D114300220237 /* NotificationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				E2059AD224410C6800795368 /* Utilities.swift in Sources */,
 				E25BED97244B95B000AB85B1 /* ActionSheetCell.swift in Sources */,
 				E2079EC624409E6500C4CC7D /* AppDelegate.swift in Sources */,
+				E2D569F7255D114300220237 /* NotificationViewModel.swift in Sources */,
 				E2079EF82440B03900C4CC7D /* Extensions.swift in Sources */,
 				E22A145F244841D6000A7779 /* TweetController.swift in Sources */,
 				E2BCBF722444A029006C3CA9 /* ProfileController.swift in Sources */,
