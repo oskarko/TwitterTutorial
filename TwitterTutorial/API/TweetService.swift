@@ -30,7 +30,11 @@ struct TweetService {
             }
         case .reply(let tweet):
             REF_TWEET_REPLIES.child(tweet.tweetID).childByAutoId()
-                .updateChildValues(values, withCompletionBlock: completion)
+                .updateChildValues(values) { (err, ref) in
+                    guard let replyKey = ref.key else { return }
+                    REF_USER_REPLIES.child(uid).updateChildValues([tweet.tweetID: replyKey],
+                                                                  withCompletionBlock: completion)
+                }
         }
     }
     
@@ -75,7 +79,28 @@ struct TweetService {
             }
         }
     }
-    
+
+    func fetchReplies(forUser user: User, completion: @escaping([Tweet]) -> Void) {
+        var replies = [Tweet]()
+
+        REF_USER_REPLIES.child(user.uid).observe(.childAdded) { snapshot in
+            let tweetID = snapshot.key
+            guard let replyID = snapshot.value as? String else { return }
+
+            REF_TWEET_REPLIES.child(tweetID).child(replyID).observeSingleEvent(of: .value) { snapshot in
+                guard let dictionary = snapshot.value as? [String: Any] else { return }
+                guard let uid = dictionary["uid"] as? String else { return }
+
+                UserService.shared.fetchUser(uid: uid) { user in
+                    let tweet = Tweet(user: user, tweetID: tweetID, dictionary: dictionary)
+                    replies.append(tweet)
+                    completion(replies)
+                }
+            }
+        }
+
+    }
+
     func fetchReplies(forTweet tweet: Tweet, completion: @escaping([Tweet]) -> Void) {
         var tweets = [Tweet]()
         
