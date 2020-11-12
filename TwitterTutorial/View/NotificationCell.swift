@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import SDWebImage
+
+protocol NotificationCellDelegate: class {
+    func didTapProfileImage(_ cell: NotificationCell)
+}
 
 class NotificationCell: UITableViewCell {
 
@@ -16,6 +21,8 @@ class NotificationCell: UITableViewCell {
         didSet { configure() }
     }
 
+    weak var delegate: NotificationCellDelegate?
+
     private lazy var profileImageView: UIImageView = {
        let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -24,7 +31,8 @@ class NotificationCell: UITableViewCell {
         iv.layer.cornerRadius = 40 / 2
         iv.backgroundColor = .twitterBlue
 
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileImageTapped))
+        let tap = UITapGestureRecognizer(target: self,
+                                         action: #selector(handleProfileImageTapped))
         iv.addGestureRecognizer(tap)
         iv.isUserInteractionEnabled = true
 
@@ -61,7 +69,8 @@ class NotificationCell: UITableViewCell {
     // MARK: - Selector
 
     @objc func handleProfileImageTapped() {
-
+        print("HERE!")
+        delegate?.didTapProfileImage(self)
     }
 
     // MARK: - Helpers
