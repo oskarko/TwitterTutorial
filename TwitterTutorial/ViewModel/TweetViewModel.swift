@@ -9,7 +9,9 @@
 import UIKit
 
 struct TweetViewModel {
-    
+
+    // MARK: - Properties
+
     let tweet: Tweet
     let user: User
     
@@ -64,7 +66,18 @@ struct TweetViewModel {
         let now = Date()
         return formatter.string(from: tweet.timestamp, to: now) ?? ""
     }
-    
+
+    var shouldHideReplyLabel: Bool {
+        return !tweet.isReply
+    }
+
+    var replyText: String? {
+        guard let replyingToUsername = tweet.replyingTo else { return nil }
+        return "→ replying to @\(replyingToUsername)"
+    }
+
+    // MARK: - Lifecycle
+
     init(tweet: Tweet) {
         self.tweet = tweet
         self.user = tweet.user
@@ -76,7 +89,9 @@ struct TweetViewModel {
                                                                                   NSAttributedString.Key.foregroundColor : UIColor.lightGray]))
         return attributedTitle
     }
-    
+
+    // MARK: - Helpers
+
     func size(forWidth width: CGFloat) -> CGSize {
         let measurementLabel = UILabel()
         measurementLabel.text = tweet.caption
