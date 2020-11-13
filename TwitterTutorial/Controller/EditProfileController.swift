@@ -25,6 +25,9 @@ class EditProfileController: UITableViewController {
         didSet { headerView.profileImageView.image = selectedImage }
     }
     private var userInfoChanged = false
+    private var imageChanged: Bool {
+        return selectedImage != nil
+    }
     weak var delegate: EditProfileControllerDelegate?
 
 
@@ -54,15 +57,39 @@ class EditProfileController: UITableViewController {
     }
 
     @objc func handleDone() {
-//        dismiss(animated: true, completion: nil)
+        view.endEditing(true)
+        guard imageChanged || userInfoChanged else { return }
+
+        updateUserData()
     }
 
 
     // MARK: - API
 
     func updateUserData() {
-        UserService.shared.saveUserData(user: user) { (err, ref) in
-            delegate?.controller(self, wantsToUpdate: user)
+        if imageChanged && !userInfoChanged {
+            updateProfileImage()
+        }
+
+        if userInfoChanged && !imageChanged {
+            UserService.shared.saveUserData(user: user) { (err, ref) in
+                self.delegate?.controller(self, wantsToUpdate: self.user)
+            }
+        }
+
+        if userInfoChanged && imageChanged {
+            UserService.shared.saveUserData(user: user) { (err, ref) in
+                self.updateProfileImage()
+            }
+        }
+    }
+
+    func updateProfileImage() {
+        guard let image = selectedImage else { return }
+
+        UserService.shared.updateProfileImage(image: image) { profileImageURL in
+            self.user.profileImageUrl = profileImageURL
+            self.delegate?.controller(self, wantsToUpdate: self.user)
         }
     }
 
@@ -84,7 +111,6 @@ class EditProfileController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
                                                            target: self,
                                                            action: #selector(handleDone))
-        navigationItem.rightBarButtonItem?.isEnabled = false
     }
 
     func configureTableView() {
