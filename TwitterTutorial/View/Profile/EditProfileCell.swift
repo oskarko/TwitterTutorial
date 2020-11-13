@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EditProfileCellDelegate: class {
+    func updateUserInfo(_ cell: EditProfileCell)
+}
+
 class EditProfileCell: UITableViewCell {
 
     // MARK: - Properties
@@ -40,6 +44,8 @@ class EditProfileCell: UITableViewCell {
         return tv
     }()
 
+    weak var delegate: EditProfileCellDelegate?
+
     // MARK: - Lifecycle
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -71,6 +77,12 @@ class EditProfileCell: UITableViewCell {
                            paddingTop: 4,
                            paddingLeft: 16,
                            paddingBottom: 8)
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleUpdateUserInfo),
+                                               name: UITextView.textDidEndEditingNotification,
+                                               object: nil)
+
     }
     
     required init?(coder: NSCoder) {
@@ -80,7 +92,7 @@ class EditProfileCell: UITableViewCell {
     // MARK: - Selectors
 
     @objc func handleUpdateUserInfo() {
-
+        delegate?.updateUserInfo(self)
     }
     
     // MARK: - Helpers
