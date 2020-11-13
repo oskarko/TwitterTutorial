@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let reuseIdentifier = "EditProfileCell"
+
 class EditProfileController: UITableViewController {
 
     // MARK: - Properties
@@ -73,6 +75,8 @@ class EditProfileController: UITableViewController {
         headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 180)
         headerView.delegate = self
         tableView.tableFooterView = UIView()
+
+        tableView.register(EditProfileCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
 
 
@@ -81,7 +85,26 @@ class EditProfileController: UITableViewController {
 // MARK: - UITableViewDataSource
 
 extension EditProfileController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return EditProfileOptions.allCases.count
+    }
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EditProfileCell
+
+        return cell
+    }
+
+}
+
+// MARK: - UITableViewDelegate
+
+extension EditProfileController {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let option = EditProfileOptions(rawValue: indexPath.row) else { return 0 }
+
+        return option == .bio ? 100 : 48
+    }
 }
 
 // MARK: - EditProfileHeaderDelegate
