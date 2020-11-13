@@ -10,6 +10,10 @@ import UIKit
 
 private let reuseIdentifier = "EditProfileCell"
 
+protocol EditProfileControllerDelegate: class {
+    func controller(_ controller: EditProfileController, wantsToUpdate user: User)
+}
+
 class EditProfileController: UITableViewController {
 
     // MARK: - Properties
@@ -20,6 +24,8 @@ class EditProfileController: UITableViewController {
     private var selectedImage: UIImage? {
         didSet { headerView.profileImageView.image = selectedImage }
     }
+    private var userInfoChanged = false
+    weak var delegate: EditProfileControllerDelegate?
 
 
     // MARK: - Lifecycle
@@ -53,6 +59,12 @@ class EditProfileController: UITableViewController {
 
 
     // MARK: - API
+
+    func updateUserData() {
+        UserService.shared.saveUserData(user: user) { (err, ref) in
+            delegate?.controller(self, wantsToUpdate: user)
+        }
+    }
 
 
     // MARK: - Helpers
@@ -147,6 +159,8 @@ extension EditProfileController: EditProfileCellDelegate {
     func updateUserInfo(_ cell: EditProfileCell) {
 
         guard let viewModel = cell.viewModel else { return }
+        userInfoChanged = true
+        navigationItem.rightBarButtonItem?.isEnabled = true
 
         switch viewModel.option {
 
