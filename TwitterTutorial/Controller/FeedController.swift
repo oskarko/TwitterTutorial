@@ -58,11 +58,13 @@ class FeedController: UICollectionViewController {
     }
 
     func checkIfUserLikedTweets() {
-        for (index, tweet) in tweets.enumerated() {
+        self.tweets.forEach { tweet in
             TweetService.shared.checkIfUserLikedTweet(tweet) { didLike in
                 guard didLike == true else { return }
 
-                self.tweets[index].didLike = true
+                if let index = self.tweets.firstIndex(where: { $0.tweetID == tweet.tweetID }) {
+                    self.tweets[index].didLike = true
+                }
             }
         }
     }
