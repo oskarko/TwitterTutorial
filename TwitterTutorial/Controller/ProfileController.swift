@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 private let reuseIdentifier = "TweetCell"
 private let headerIdentifier = "ProfileHeader"
@@ -211,5 +212,17 @@ extension ProfileController: EditProfileControllerDelegate {
         controller.dismiss(animated: true, completion: nil)
         self.user = user
         self.collectionView.reloadData()
+    }
+
+    func handleLogout() {
+        do {
+            try Auth.auth().signOut()
+
+            let nav = UINavigationController(rootViewController: LoginController())
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        } catch let error {
+            print("Couldn't make logout with error \(error.localizedDescription)")
+        }
     }
 }
