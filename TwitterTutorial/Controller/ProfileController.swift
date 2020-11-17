@@ -188,8 +188,8 @@ extension ProfileController: ProfileHeaderDelegate {
                 self.collectionView.reloadData()
 
                 // We must send a notification in case we start following someone.
-                NotificationService.shared.uploadNotification(type: .follow,
-                                                              user: self.user)
+                NotificationService.shared.uploadNotification(toUser: self.user,
+                                                              type: .follow)
             }
         }
     }
