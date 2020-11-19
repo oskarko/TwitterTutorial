@@ -10,7 +10,7 @@ import UIKit
 import ActiveLabel
 
 protocol TweetCellDelegate: class {
-    func handleProfileIMageTapped(_ cell: TweetCell)
+    func handleProfileImageTapped(_ cell: TweetCell)
     func handleReplyTapped(_ cell: TweetCell)
     func handleLikeTapped(_ cell: TweetCell)
     func handleFetchUser(withUsername username: String)
@@ -142,7 +142,7 @@ class TweetCell: UICollectionViewCell {
     // MARK: - Selectors
     
     @objc func handleProfileImageTapped() {
-        delegate?.handleProfileIMageTapped(self)
+        delegate?.handleProfileImageTapped(self)
     }
     
     @objc func handleCommentTapped() {
