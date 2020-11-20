@@ -18,7 +18,7 @@
 		E2079EDD24409E6700C4CC7D /* TwitterTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2079EDC24409E6700C4CC7D /* TwitterTutorialTests.swift */; };
 		E2079EEE2440A00C00C4CC7D /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2079EED2440A00C00C4CC7D /* MainTabController.swift */; };
 		E2079EF02440A3BF00C4CC7D /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2079EEF2440A3BF00C4CC7D /* FeedController.swift */; };
-		E2079EF22440A3CF00C4CC7D /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2079EF12440A3CF00C4CC7D /* ExploreController.swift */; };
+		E2079EF22440A3CF00C4CC7D /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2079EF12440A3CF00C4CC7D /* SearchController.swift */; };
 		E2079EF42440A3DE00C4CC7D /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2079EF32440A3DE00C4CC7D /* NotificationsController.swift */; };
 		E2079EF62440A3ED00C4CC7D /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2079EF52440A3ED00C4CC7D /* ConversationsController.swift */; };
 		E2079EF82440B03900C4CC7D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2079EF72440B03900C4CC7D /* Extensions.swift */; };
@@ -86,7 +86,7 @@
 		E2079EDE24409E6700C4CC7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2079EED2440A00C00C4CC7D /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		E2079EEF2440A3BF00C4CC7D /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
-		E2079EF12440A3CF00C4CC7D /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
+		E2079EF12440A3CF00C4CC7D /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		E2079EF32440A3DE00C4CC7D /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		E2079EF52440A3ED00C4CC7D /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 		E2079EF72440B03900C4CC7D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -245,7 +245,7 @@
 				E2079EF92440B4B400C4CC7D /* Authentication */,
 				E2079EED2440A00C00C4CC7D /* MainTabController.swift */,
 				E2079EEF2440A3BF00C4CC7D /* FeedController.swift */,
-				E2079EF12440A3CF00C4CC7D /* ExploreController.swift */,
+				E2079EF12440A3CF00C4CC7D /* SearchController.swift */,
 				E2079EF32440A3DE00C4CC7D /* NotificationsController.swift */,
 				E2079EF52440A3ED00C4CC7D /* ConversationsController.swift */,
 				E2BCBF652444498C006C3CA9 /* UploadTweetController.swift */,
@@ -507,7 +507,7 @@
 				E26D359B244263B100F5CCF3 /* AuthService.swift in Sources */,
 				E2BCBF662444498C006C3CA9 /* UploadTweetController.swift in Sources */,
 				E26D359F2442771D00F5CCF3 /* User.swift in Sources */,
-				E2079EF22440A3CF00C4CC7D /* ExploreController.swift in Sources */,
+				E2079EF22440A3CF00C4CC7D /* SearchController.swift in Sources */,
 				E28F0876255E8D4500E85EF1 /* EditProfileHeader.swift in Sources */,
 				E2079EC824409E6500C4CC7D /* SceneDelegate.swift in Sources */,
 				E2079EEE2440A00C00C4CC7D /* MainTabController.swift in Sources */,

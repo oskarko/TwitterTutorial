@@ -9,9 +9,16 @@
 import UIKit
 import Firebase
 
+enum ActionButtonConfiguration {
+    case tweet
+    case message
+}
+
 class MainTabController: UITabBarController {
 
     // MARK: - Properties
+
+    private var buttonConfig: ActionButtonConfiguration = .tweet
     
     var user: User? {
         didSet {
@@ -68,8 +75,18 @@ class MainTabController: UITabBarController {
     // MARK: - Selectors
     
     @objc func actionButtonTapped() {
-        guard let user = user else { return }
-        let controller = UploadTweetController(user: user, config: .tweet)
+
+        let controller: UIViewController
+
+        switch buttonConfig {
+        case .message:
+            controller = SearchController(config: .messages)
+        case .tweet:
+            guard let user = user else { return }
+            controller = UploadTweetController(user: user, config: .tweet)
+
+        }
+
         let nav = UINavigationController(rootViewController: controller)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)
@@ -78,6 +95,8 @@ class MainTabController: UITabBarController {
     // MARK: - Helpers
     
     func configureUI() {
+        self.delegate = self
+
         view.addSubview(actionButton)
         actionButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor,
                             right: view.safeAreaLayoutGuide.rightAnchor,
@@ -94,9 +113,9 @@ class MainTabController: UITabBarController {
         let feedNav = templateNavigationController(image: UIImage(named: "home_unselected"),
                                                    rootViewController: feed)
         
-        let explore = ExploreController()
-        let exploreNav = templateNavigationController(image: UIImage(named: "search_unselected"),
-                                                      rootViewController: explore)
+        let search = SearchController(config: .userSearch)
+        let searchNav = templateNavigationController(image: UIImage(named: "search_unselected"),
+                                                      rootViewController: search)
         
         let notifications = NotificationsController()
         let notificationsNav = templateNavigationController(image: UIImage(named: "like_unselected"),
@@ -106,7 +125,7 @@ class MainTabController: UITabBarController {
         let conversationsNav = templateNavigationController(image: UIImage(named: "ic_mail_outline_white_2x-1"),
                                                             rootViewController: conversations)
         
-        viewControllers = [feedNav, exploreNav, notificationsNav, conversationsNav]
+        viewControllers = [feedNav, searchNav, notificationsNav, conversationsNav]
     }
     
     func templateNavigationController(image: UIImage?, rootViewController: UIViewController) -> UINavigationController {
@@ -118,4 +137,14 @@ class MainTabController: UITabBarController {
         return nav
     }
 
+}
+
+extension MainTabController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController,
+                          didSelect viewController: UIViewController) {
+        let index = viewControllers?.firstIndex(of: viewController)
+        let image = index == 3 ? UIImage(named: "mail") : UIImage(named: "new_tweet")
+        actionButton.setImage(image, for: .normal)
+        buttonConfig = index == 3 ? .message : .tweet
+    }
 }
