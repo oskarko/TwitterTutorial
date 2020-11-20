@@ -74,14 +74,16 @@ class EditProfileController: UITableViewController {
         }
 
         if userInfoChanged && !imageChanged {
-            UserService.shared.saveUserData(user: user) { (err, ref) in
-                self.delegate?.controller(self, wantsToUpdate: self.user)
+            UserService.shared.saveUserData(user: user) { [weak self] (err, ref) in
+                guard let strongSelf = self else { return }
+                strongSelf.delegate?.controller(strongSelf, wantsToUpdate: strongSelf.user)
             }
         }
 
         if userInfoChanged && imageChanged {
-            UserService.shared.saveUserData(user: user) { (err, ref) in
-                self.updateProfileImage()
+            UserService.shared.saveUserData(user: user) { [weak self] (err, ref) in
+                guard let strongSelf = self else { return }
+                strongSelf.updateProfileImage()
             }
         }
     }
@@ -89,9 +91,10 @@ class EditProfileController: UITableViewController {
     func updateProfileImage() {
         guard let image = selectedImage else { return }
 
-        UserService.shared.updateProfileImage(image: image) { profileImageURL in
-            self.user.profileImageUrl = profileImageURL
-            self.delegate?.controller(self, wantsToUpdate: self.user)
+        UserService.shared.updateProfileImage(image: image) { [weak self] profileImageURL in
+            guard let strongSelf = self else { return }
+            strongSelf.user.profileImageUrl = profileImageURL
+            strongSelf.delegate?.controller(strongSelf, wantsToUpdate: strongSelf.user)
         }
     }
 

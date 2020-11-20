@@ -83,16 +83,18 @@ class ProfileController: UICollectionViewController {
     }
     
     func checkIfUserIsFollowed() {
-        UserService.shared.checkIfUserIsFollowed(uid: user.uid) { isFollowed in
-            self.user.isFollowed = isFollowed
-            self.collectionView.reloadData()
+        UserService.shared.checkIfUserIsFollowed(uid: user.uid) { [weak self] isFollowed in
+            guard let strongSelf = self else { return }
+            strongSelf.user.isFollowed = isFollowed
+            strongSelf.collectionView.reloadData()
         }
     }
     
     func fetchUserStats() {
-        UserService.shared.fetchUserStats(uid: user.uid) { stats in
-            self.user.stats = stats
-            self.collectionView.reloadData()
+        UserService.shared.fetchUserStats(uid: user.uid) { [weak self]  stats in
+            guard let strongSelf = self else { return }
+            strongSelf.user.stats = stats
+            strongSelf.collectionView.reloadData()
         }
     }
     
@@ -184,17 +186,19 @@ extension ProfileController: ProfileHeaderDelegate {
             return
         }
         if user.isFollowed {
-            UserService.shared.unfollowUser(uid: user.uid) { (database, error) in
-                self.user.isFollowed = false
-                self.collectionView.reloadData()
+            UserService.shared.unfollowUser(uid: user.uid) { [weak self] (database, error) in
+                guard let strongSelf = self else { return }
+                strongSelf.user.isFollowed = false
+                strongSelf.collectionView.reloadData()
             }
         } else {
-            UserService.shared.followUser(uid: user.uid) { (database, error) in
-                self.user.isFollowed = true
-                self.collectionView.reloadData()
+            UserService.shared.followUser(uid: user.uid) { [weak self] (database, error) in
+                guard let strongSelf = self else { return }
+                strongSelf.user.isFollowed = true
+                strongSelf.collectionView.reloadData()
 
                 // We must send a notification in case we start following someone.
-                NotificationService.shared.uploadNotification(toUser: self.user,
+                NotificationService.shared.uploadNotification(toUser: strongSelf.user,
                                                               type: .follow)
             }
         }

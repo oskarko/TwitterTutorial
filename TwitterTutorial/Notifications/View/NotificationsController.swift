@@ -59,9 +59,10 @@ class NotificationsController: UITableViewController {
 
             let user = notification.user
 
-            UserService.shared.checkIfUserIsFollowed(uid: user.uid) { isFollowed in
-                if let index = self.notifications.firstIndex(where: { $0.user.uid == notification.user.uid }) {
-                    self.notifications[index].user.isFollowed = isFollowed
+            UserService.shared.checkIfUserIsFollowed(uid: user.uid) { [weak self] isFollowed in
+                guard let strongSelf = self else { return }
+                if let index = strongSelf.notifications.firstIndex(where: { $0.user.uid == notification.user.uid }) {
+                    strongSelf.notifications[index].user.isFollowed = isFollowed
                 }
 
             }
@@ -71,8 +72,9 @@ class NotificationsController: UITableViewController {
             if case .follow = notification.type {
                 let user = notification.user
 
-                UserService.shared.checkIfUserIsFollowed(uid: user.uid) { isFollowed in
-                    self.notifications[index].user.isFollowed = isFollowed
+                UserService.shared.checkIfUserIsFollowed(uid: user.uid) { [weak self] isFollowed in
+                    guard let strongSelf = self else { return }
+                    strongSelf.notifications[index].user.isFollowed = isFollowed
                 }
             }
         }
@@ -141,13 +143,15 @@ extension NotificationsController: NotificationCellDelegate {
 
         if user.isFollowed {
             // handle unfollow
-            UserService.shared.unfollowUser(uid: user.uid) { (error, red) in
+            UserService.shared.unfollowUser(uid: user.uid) { [weak self] (error, red) in
+                guard self != nil else { return }
                 cell.notification?.user.isFollowed = false
             }
         }
         else {
             // handle follow
-            UserService.shared.followUser(uid: user.uid) { (error, red) in
+            UserService.shared.followUser(uid: user.uid) { [weak self] (error, red) in
+                guard self !=  nil else { return }
                 cell.notification?.user.isFollowed = true
             }
         }

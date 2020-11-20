@@ -114,9 +114,10 @@ extension TweetController: UICollectionViewDelegateFlowLayout {
 
 extension TweetController: TweetHeaderDelegate {
     func handleFetchUser(withUsername username: String) {
-        UserService.shared.fetchUser(WithUsername: username) { user in
+        UserService.shared.fetchUser(WithUsername: username) { [weak self] user in
+            guard let strongSelf = self else { return }
             let controller = ProfileController(user: user)
-            self.navigationController?.pushViewController(controller, animated: true)
+            strongSelf.navigationController?.pushViewController(controller, animated: true)
         }
     }
     
@@ -124,10 +125,11 @@ extension TweetController: TweetHeaderDelegate {
         if tweet.user.isCurrentUser {
             showActionSheet(forUser: tweet.user)
         } else {
-            UserService.shared.checkIfUserIsFollowed(uid: tweet.user.uid) { isFollowed in
-                var user = self.tweet.user
+            UserService.shared.checkIfUserIsFollowed(uid: tweet.user.uid) { [weak self] isFollowed in
+                guard let strongSelf = self else { return }
+                var user = strongSelf.tweet.user
                 user.isFollowed = isFollowed
-                self.showActionSheet(forUser: user)
+                strongSelf.showActionSheet(forUser: user)
             }
         }
     }

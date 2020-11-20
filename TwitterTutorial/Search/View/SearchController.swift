@@ -62,8 +62,9 @@ class SearchController: UITableViewController {
     // MARK: - API
     
     func fetchUsers() {
-        UserService.shared.fetchUsers { users in
-            self.users = users
+        UserService.shared.fetchUsers { [weak self] users in
+            guard let strongSelf = self else { return }
+            strongSelf.users = users
         }
     }
 

@@ -109,7 +109,8 @@ class UploadTweetController: UIViewController {
             var username = word.trimmingCharacters(in: .symbols)
             username = username.trimmingCharacters(in: .punctuationCharacters)
 
-            UserService.shared.fetchUser(WithUsername: username) { mentionedUser in
+            UserService.shared.fetchUser(WithUsername: username) { [weak self] mentionedUser in
+                guard self != nil else { return }
                 NotificationService.shared.uploadNotification(toUser: mentionedUser,
                                                               type: .mention,
                                                               tweetID: tweetID)

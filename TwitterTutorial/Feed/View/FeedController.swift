@@ -150,9 +150,10 @@ extension FeedController: UICollectionViewDelegateFlowLayout {
 
 extension FeedController: TweetCellDelegate {
     func handleFetchUser(withUsername username: String) {
-        UserService.shared.fetchUser(WithUsername: username) { user in
+        UserService.shared.fetchUser(WithUsername: username) { [weak self] user in
+            guard let strongSelf = self else { return }
             let controller = ProfileController(user: user)
-            self.navigationController?.pushViewController(controller, animated: true)
+            strongSelf.navigationController?.pushViewController(controller, animated: true)
         }
     }
 
